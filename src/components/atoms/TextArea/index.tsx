@@ -54,7 +54,7 @@ const TextArea = (props: TextAreaProps) => {
 
   console.assert(
     !(rows < minRows),
-    'TextArea: rows should be greater than minRows.',
+    'TextArea: rows should be greater than minRows.'
   )
 
   const handleChange = useCallback(
@@ -80,7 +80,7 @@ const TextArea = (props: TextAreaProps) => {
       setTextareaRows(currentRows < maxRows ? currentRows : maxRows)
       onChange && onChange(e)
     },
-    [onChange, minRows, maxRows],
+    [onChange, minRows, maxRows]
   )
 
   return (

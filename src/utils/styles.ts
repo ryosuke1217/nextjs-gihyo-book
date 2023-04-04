@@ -37,7 +37,7 @@ const BREAKPOINTS: { [key: string]: string } = {
 export function toPropValue<T>(
   propKey: string,
   prop?: Responsive<T>,
-  theme?: AppTheme,
+  theme?: AppTheme
 ) {
   if (prop === undefined) return undefined
 
@@ -50,8 +50,8 @@ export function toPropValue<T>(
           `${propKey}: ${toThemeValueIfNeeded(
             propKey,
             prop[responsiveKey],
-            theme,
-          )};`,
+            theme
+          )};`
         )
       } else if (
         responsiveKey === 'sm' ||
@@ -64,7 +64,7 @@ export function toPropValue<T>(
         const style = `${propKey}: ${toThemeValueIfNeeded(
           propKey,
           prop[responsiveKey],
-          theme,
+          theme
         )};`
         result.push(`@media screen and (min-width: ${breakpoint}) {${style}}`)
       }
@@ -161,14 +161,14 @@ function isColorThemeKeys(prop: any, theme: AppTheme): prop is ColorThemeKeys {
 
 function isFontSizeThemeKeys(
   prop: any,
-  theme: AppTheme,
+  theme: AppTheme
 ): prop is FontSizeThemeKeys {
   return Object.keys(theme.fontSizes).filter((key) => key == prop).length > 0
 }
 
 function isLetterSpacingThemeKeys(
   prop: any,
-  theme: AppTheme,
+  theme: AppTheme
 ): prop is LetterSpacingThemeKeys {
   return (
     Object.keys(theme.letterSpacings).filter((key) => key == prop).length > 0
@@ -177,7 +177,7 @@ function isLetterSpacingThemeKeys(
 
 function isLineHeightThemeKeys(
   prop: any,
-  theme: AppTheme,
+  theme: AppTheme
 ): prop is LineHeightThemeKeys {
   return Object.keys(theme.lineHeights).filter((key) => key == prop).length > 0
 }

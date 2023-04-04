@@ -1,7 +1,7 @@
 // typesは後ほど定義
+import { fetcher } from '../../utils'
 import { ApiContext, User } from 'types/data'
 // 先ほど定義したsrc/utils/index.tsから読み込み
-import { fetcher } from '../../utils'
 
 export type SigninParams = {
   /**
@@ -24,7 +24,7 @@ export type SigninParams = {
  */
 const signin = async (
   context: ApiContext,
-  params: SigninParams,
+  params: SigninParams
 ): Promise<User> => {
   return await fetcher(
     `${context.apiRootUrl.replace(/\/$/g, '')}/auth/signin`,
@@ -35,7 +35,7 @@ const signin = async (
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(params),
-    },
+    }
   )
 }
 
